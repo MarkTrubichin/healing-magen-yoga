@@ -1,5 +1,5 @@
 import React from 'react';
-import '/Users/marktrubichin/work/python/healing-magen-yoga/frontend/src/styles/header.css';
+import '../styles/header.css';
 import logo from '../images/healing-magen-yoga-logo.png';
 
 
