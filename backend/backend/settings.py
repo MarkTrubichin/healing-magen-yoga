@@ -37,7 +37,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'https://healing-magen-yoga.onrender.
 
 INSTALLED_APPS = [
     'corsheaders',
-    'backend.api',
+    'api.apps.ApiConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
