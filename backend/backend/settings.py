@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,12 +23,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=ppb0ean8=h%s7*oo2=-bw=jr3gczpd=(6p(nk!t(v!g54&_&-'
+load_dotenv()
+SECRET_KEY = os.getenv('SECRET_KEY', 'fallback-secret-key')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'yourdomain.com', 'your.server.ip']
 
 
 # Application definition
@@ -55,6 +59,7 @@ MIDDLEWARE = [
 ]
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "https://your-react-domain.com",
 ]
 ROOT_URLCONF = 'backend.urls'
 
@@ -63,7 +68,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / '/Users/marktrubichin/work/python/healing-magen-yoga/frontend/build/'  
+            BASE_DIR / '../frontend/build/'  
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -127,10 +132,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / '/Users/marktrubichin/work/python/healing-magen-yoga/frontend/build/static',
+    BASE_DIR / '../frontend/build/static',
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
