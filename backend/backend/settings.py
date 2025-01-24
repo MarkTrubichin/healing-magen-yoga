@@ -30,7 +30,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'fallback-secret-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'yourdomain.com', 'your.server.ip']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'https://healing-magen-yoga.onrender.com/']
 
 
 # Application definition
@@ -59,7 +59,7 @@ MIDDLEWARE = [
 ]
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "https://your-react-domain.com",
+    "https://healing-magen-yoga.onrender.com",
 ]
 ROOT_URLCONF = 'backend.urls'
 
