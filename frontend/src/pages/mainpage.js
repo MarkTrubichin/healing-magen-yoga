@@ -1,5 +1,5 @@
 import React from 'react';
-import '/Users/marktrubichin/work/python/healing-magen-yoga/frontend/src/styles/main-page.css';
+import '../styles/main-page.css';
 import Joshep_removebg_preview from '../images/Joshep_removebg_preview.png';
 
 
