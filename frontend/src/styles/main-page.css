@@ -47,3 +47,37 @@
     line-height: 40px;
 
 }
+
+@media (max-width: 768px) {
+    .wrapper {
+      padding: 10px;
+      background-size: contain; /* Чтобы фон не выглядел слишком растянутым */
+    }
+  
+    .Hmy {
+      font-size: 32px;
+      margin-top: 20px; /* Уменьшаем отступ сверху */
+    }
+  
+    .yc {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+  
+    .desc {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-top: 15px;
+      text-align: center; /* Выравнивание текста по центру */
+      padding: 0 10px; /* Отступы слева и справа */
+    }
+  
+    .Joshep {
+      max-width: 80%; /* Уменьшаем размер изображения */
+      height: auto;
+      margin: 20px auto; /* Центрируем изображение */
+      display: block;
+      border-radius: 10px; /* Немного закругляем края */
+    }
+  }
+  

@@ -6,8 +6,8 @@ import Joshep_removebg_preview from '../images/Joshep_removebg_preview.png';
 function MainPage() {
   return (
     <div className='wrapper'>
-      <h1 className='Hmy'>Healing magen yoga</h1>
-      <p className='yc'>yoga curses</p>
+      <h1 className='Hmy'>Healing Magen Yoga</h1>
+      <p className='yc'>Yoga curses</p>
       <img src={Joshep_removebg_preview} alt='Joshep' height={700} width={700} className='Joshep'></img>
       <p className='desc'>Yoga Therapy Standard 2024 <br></br>
                           Healing Magen Yoga Therapy <br></br>
