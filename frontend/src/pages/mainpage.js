@@ -13,7 +13,7 @@ function MainPage() {
                           Healing Magen Yoga Therapy <br></br>
 
   Combines the ancient wisdom and traditions of numerous<br></br> lineages  of yoga and Ayurveda  with modern science in training<br></br> yoga therapists  to skillfully assist and empower those they work<br></br> with to play an  active role  in their healing, health and well-being.  
-  <br></br> The training of   modern yoga therapists gives them the opportunity <br></br> to work in an  integrative health and wellness environment with <br></br> groups and individuals. 
+  <br></br> The training of modern yoga therapists gives them the opportunity <br></br> to work in an  integrative health and wellness environment with <br></br> groups and individuals. 
       </p>
     </div>
   );
