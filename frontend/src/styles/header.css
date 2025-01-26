@@ -3,7 +3,6 @@
 
 header {
     background-color: #1e4e1f;
-    width: vh;
     height: 75px;
     display: flex;
     align-items: center;
@@ -43,7 +42,7 @@ header ul li a{
 }
 
 header ul li a:hover {
-    transform: scale(1.1);
+    transform: scale(1.3);
 }
 
 header ul li a:not(:last-child) {
