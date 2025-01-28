@@ -1,5 +1,5 @@
 .wrapper {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -21,22 +21,24 @@
     z-index: 1;
     position: absolute;
     top: 100px;
-    left: 100px;
+    margin-left: 100px;
     font-size: 55px;
+    white-space: nowrap;
+
   }
   
   .yc {
     z-index: 1;
     position: absolute;
     top: 170px;
-    left: 100px;
+    margin-left: 100px;
     font-size: 30px;
   }
   
   .Joshep {
     position: absolute;
-    left: 880px;
-    top: 100px;
+    right: 0;
+    bottom: 0;
     z-index: 10;
   }
   
@@ -44,95 +46,111 @@
     position: absolute;
     font-size: 25px;
     top: 250px;
-    left: 100px;
-    line-height: 40px;
+    margin-left: 100px;
+    line-height: 35px;
   }
   
-  @media (max-width: 768px) {
-    .Hmy {
-      top: 100px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 38px;
-      text-align: center;
+  @media (max-width: 1320px) {
+    .Hmy, .yc, .desc {
+        margin-left: 20px;
     }
-    .yc {
-      top: 150px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 24px;
-      text-align: center;
+  }
+
+  @media (max-width: 1200px) {
+    .Joshep {
+        width: 600px;
+        height: 600px;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .desc {
+        font-size: 20px;
+    }
+  }
+
+  @media (max-width: 970px) {
+    .desc {
+        font-size: 20px;
+        top: 300px;
     }
     .Joshep {
-      top: 200px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 200px;
-      height: auto;
-      z-index: 10;
+        width: 500px;
+        height: 500px;
     }
-    .desc {
-      top: 400px;
-      left: 10%;
-      right: 10%;
-      font-size: 22px;
-      line-height: 25px;
-      text-align: center;
+
+    .Hmy {
+        top: 150px;
+    }
+
+    .yc {
+        top: 215px;
     }
   }
-  
-  @media (max-width: 646px) {
+  @media (max-width: 900px) {
     .Hmy {
-      top: 100px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 30px;
-      text-align: center;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 100px;
+        font-size: 30px;
+    }
+
+    .yc {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 140px;
+        font-size: 25px;
+    }
+
+    .Joshep {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 250px;
+        width: 250px;
+        bottom: 250px;
+    }
+
+    .desc {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 460px;
+        text-align: center;
+        line-height: 25px;
+    }
+    }
+    
+    @media (max-width: 550px) {
+        .yc {
+            top: 125px;
+        }
+        .Joshep {
+            bottom: 270px;
+        }
+
+        .desc {
+            top: 440px;
+            font-size: 15px;
+        }
+      }
+@media (max-width: 310px) {
+    .Hmy {
+        font-size: 20px;
     }
     .yc {
-      top: 150px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 24px;
-      text-align: center;
+        font-size: 20px;
     }
+
     .Joshep {
-      top: 200px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 200px;
-      height: auto;
-      z-index: 10;
+        height: 200px;
+        width: 200px;
+        bottom: 330px;
     }
+
     .desc {
-      top: 400px;
-      left: 10%;
-      right: 10%;
-      font-size: 20px;
-      line-height: 20px;
-      text-align: center;
+        top: 375px;
     }
-  }
-  
-  @media (max-width: 510px) {
-    .Hmy {
-      top: 120px;
-      font-size: 25px;
-    }
-    .yc {
-      top: 150px;
-      font-size: 20px;
-    }
-    .Joshep {
-      top: 220px;
-      width: 150px;
-    }
-    .desc {
-      top: 390px;
-      font-size: 16px;
-      left: 5%;
-      right: 5%;
-      line-height: 22px;
-    }
-  }
-  
+}
