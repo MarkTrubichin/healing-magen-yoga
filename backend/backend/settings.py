@@ -61,7 +61,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            # Убедитесь, что это действительно путь к build/
+            BASE_DIR / '../frontend/build/static',
             BASE_DIR / '../frontend/build/'
         ],
         'APP_DIRS': True,
@@ -107,7 +107,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / '../frontend/build/static'
+    BASE_DIR / '../frontend/build/static',
+    BASE_DIR / '../frontend/build',
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
