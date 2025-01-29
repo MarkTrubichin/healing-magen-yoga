@@ -13,7 +13,7 @@ function Header() {
         </span>
         <ul>
             <li><a href='/'>Home</a></li>
-            <li><a href='/'>Curses</a></li>
+            <li><a href='/'>Courses</a></li>
             <li><a href='/'>Contact us</a></li>
         </ul>
     </header>
