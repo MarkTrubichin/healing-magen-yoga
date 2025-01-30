@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.a89c87a4.css",
-    "main.js": "/static/js/main.6cb0e48e.js",
+    "main.css": "/static/css/main.43cd72af.css",
+    "main.js": "/static/js/main.0e69c9a4.js",
     "static/js/488.e75445ad.chunk.js": "/static/js/488.e75445ad.chunk.js",
     "static/media/healing-magen-yoga-logo.png": "/static/media/healing-magen-yoga-logo.fa8dd7049d2bc79fcf79.png",
     "index.html": "/index.html",
-    "main.a89c87a4.css.map": "/static/css/main.a89c87a4.css.map",
-    "main.6cb0e48e.js.map": "/static/js/main.6cb0e48e.js.map",
+    "main.43cd72af.css.map": "/static/css/main.43cd72af.css.map",
+    "main.0e69c9a4.js.map": "/static/js/main.0e69c9a4.js.map",
     "488.e75445ad.chunk.js.map": "/static/js/488.e75445ad.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a89c87a4.css",
-    "static/js/main.6cb0e48e.js"
+    "static/css/main.43cd72af.css",
+    "static/js/main.0e69c9a4.js"
   ]
 }

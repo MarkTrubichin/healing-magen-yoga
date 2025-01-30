@@ -3,6 +3,7 @@ import Header from './components/header';
 import { fetchData } from './api';
 import MainPage  from './pages/mainpage';
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import CoursesPage from './pages/coursespage';
 
 
 
@@ -17,6 +18,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/courses" element={<CoursesPage />} />
       </Routes>
     </Router>
   );
