@@ -38,10 +38,6 @@ function MainPage() {
             Healing Magen Yoga Therapy believes in empowering individuals to progress toward improved health 
             and well-being through the teachings and practices of yoga.
           </p>
-          <p>
-            Yoga therapy is an ancient healing art reinforced by modern biomedical peer-reviewed research 
-            and evidence-informed practices. It is at the core of what we do.
-          </p>
           <p>Our methodology is based on:</p>
           <ul>
             <li>Breathing, feeling, listening to the body.</li>
