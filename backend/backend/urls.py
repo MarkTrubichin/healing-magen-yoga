@@ -4,11 +4,13 @@ from api.views import index
 from django.views.static import serve
 from django.conf import settings
 from django.http import JsonResponse
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
     path('api/courses/', include('courses.urls')),
+    path('courses/', TemplateView.as_view(template_name='index.html')),
 ]
 
 urlpatterns += [
