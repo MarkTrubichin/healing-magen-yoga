@@ -9,6 +9,7 @@ header {
     border-bottom: 3px solid black;
     width: 100%;
     position: fixed;
+    z-index: 1000;
 }
 
 .logo {

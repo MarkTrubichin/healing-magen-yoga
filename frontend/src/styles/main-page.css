@@ -1,161 +1,160 @@
 .wrapper {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
     background: linear-gradient(rgba(30, 78, 31, 0.8), rgba(60, 60, 60, 0.8)),
-                url('../images/healing-magen-yoga-logo.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+                url('../images/healing-magen-yoga-logo.png') no-repeat center/cover;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    z-index: -1;
+    overflow-y: auto;
     font-family: 'Times New Roman', sans-serif;
     color: white;
-    overflow-y: auto;
-  }
-  
-  .Hmy {
-    z-index: 1;
-    position: absolute;
-    top: 100px;
-    margin-left: 100px;
+    z-index: 0;
+}
+
+.container {
+    max-width: 1200px; 
+    width: 100%; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+    box-sizing: border-box; 
+    text-align: center;
+}
+
+.Hmy {
+    margin-top: 80px;
     font-size: 55px;
     white-space: nowrap;
+    margin-bottom: 10px;
+}
 
-  }
-  
-  .yc {
-    z-index: 1;
-    position: absolute;
-    top: 170px;
-    margin-left: 100px;
+.yc {
+    margin-top: 10px;
     font-size: 30px;
-  }
-  
-  .Joshep {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: 10;
-  }
-  
-  .desc {
-    position: absolute;
+    margin-bottom: 10px;
+}
+
+.global h2 {
     font-size: 25px;
-    top: 250px;
-    margin-left: 100px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.global, .mission, .standards {
+    font-size: 25px;
+    margin-top: 40px;
     line-height: 35px;
-  }
-  
-  @media (max-width: 1320px) {
-    .Hmy, .yc, .desc {
-        margin-left: 20px;
-    }
-  }
+    padding: 0 20px;
+}
 
-  @media (max-width: 1200px) {
-    .Joshep {
-        width: 600px;
-        height: 600px;
-    }
-  }
+.mission {
+    background: rgba(255, 255, 255, 0.1); 
+    padding: 40px;
+    border-radius: 15px;
+}
 
-  @media (max-width: 1100px) {
-    .desc {
-        font-size: 20px;
-    }
-  }
+.standards {
+    background: rgba(0, 0, 0, 0.2); 
+    padding: 40px;
+    border-radius: 15px;
+}
 
-  @media (max-width: 970px) {
-    .desc {
-        font-size: 20px;
-        top: 300px;
-    }
-    .Joshep {
-        width: 500px;
-        height: 500px;
-    }
+.mission ul, .standards ul, .global ul {
+    list-style: none;
+    padding: 0;
+}
 
+.mission ul li, .standards ul li {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+@media (max-width: 1320px) {
+    .container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 970px) {
     .Hmy {
-        top: 150px;
+        font-size: 40px;
     }
 
     .yc {
-        top: 215px;
+        font-size: 25px;
     }
-  }
-  @media (max-width: 900px) {
+
+    .global, .mission, .standards {
+        font-size: 20px;
+    }
+
+    .mission ul li, .standards ul li {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 900px) {
     .wrapper {
         min-height: 130%;
     }
 
     .Hmy {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 100px;
         font-size: 30px;
     }
 
     .yc {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 140px;
         font-size: 25px;
     }
 
-    .Joshep {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        height: 250px;
-        width: 250px;
-        top: 190px;
+    .global, .mission, .standards {
+        font-size: 18px;
+        line-height: 28px;
     }
 
-    .desc {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 460px;
-        text-align: center;
-        line-height: 25px;
+    .mission ul li, .standards ul li {
+        font-size: 16px;
     }
-    }
-    
-    @media (max-width: 550px) {
-        .yc {
-            top: 125px;
-        }
-        .Joshep {
-            bottom: 270px;
-        }
+}
 
-        .desc {
-            top: 440px;
-            font-size: 15px;
-        }
-      }
-@media (max-width: 310px) {
+@media (max-width: 550px) {
     .Hmy {
-        font-size: 20px;
+        font-size: 25px;
     }
+
     .yc {
         font-size: 20px;
     }
 
-    .Joshep {
-        height: 200px;
-        width: 200px;
-        top: 175px;
+    .global, .mission, .standards {
+        font-size: 15px;
     }
 
-    .desc {
-        top: 375px;
+    .global h2{
+        font-size: 20px;
+    }
+
+    .mission ul li, .standards ul li {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 310px) {
+    .Hmy {
+        font-size: 17px;
+    }
+    .yc {
+        font-size: 15px;
+    }
+    .global, .mission, .standards {
+        font-size: 14px;
+    }
+
+    .global h2{
+        font-size: 17px;
+    }
+
+    .mission ul li, .standards ul li {
+        font-size: 13px;
     }
 }
