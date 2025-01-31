@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/courses-page.css';
+import { Link } from 'react-router-dom';
 
 function CoursesPage() {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
     fetch(`${window.location.origin}/api/courses/`)
-      .then((response) => response.json())
-      .then((data) => setCourses(data))
-      .catch((error) => console.error("Error fetching courses:", error));
-  }, []);
+        .then((response) => response.json())
+        .then((data) => setCourses(data))
+        .catch((error) => console.error("Error fetching courses:", error));
+    }, []);
+
+  //   fetch("http://127.0.0.1:8000/api/courses/")
+  //     .then((response) => response.json())
+  //     .then((data) => setCourses(data))
+  //     .catch((error) => console.error("Error fetching courses:", error));
+  // }, []);
 
   return (
     <div className="wrapper">
@@ -23,7 +30,7 @@ function CoursesPage() {
                 <div key={course.id} className="course-card">
                   <img src={course.image} alt={course.title} className="course-image"/>
                   <h2 className="course-title">{course.title}</h2>   
-                  <button className="view-more-btn">View More</button>
+                  <Link className="view-more-btn" to={`/courses/${course.id}`}>View More</Link>
                 </div>
               );
             })

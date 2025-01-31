@@ -1,6 +1,5 @@
 import os
 import json
-from urllib.parse import quote
 from django.conf import settings
 from django.http import Http404
 from rest_framework.views import APIView
@@ -30,7 +29,7 @@ class CourseListView(APIView):
 
                         image_path = course_data.get("image", "")
                         if image_path:
-                            course_data["image"] = request.build_absolute_uri(settings.MEDIA_URL + quote(image_path))
+                            course_data["image"] = request.build_absolute_uri(f"{settings.MEDIA_URL}{image_path}")
 
                         courses.append(course_data)
                 except json.JSONDecodeError:
@@ -42,13 +41,23 @@ class CourseListView(APIView):
             return Response({"error": f"An unexpected error occurred: {str(e)}"}, status=500)
 
 
+import os
+import json
+from django.conf import settings
+from django.http import Http404
+from rest_framework.views import APIView
+from rest_framework.response import Response
+
 class CourseDetailView(APIView):
     def get(self, request, pk):
         try:
             course_file = f'course_{pk}.json'
             course_path = os.path.join(settings.BASE_DIR, 'courses/courses_data', course_file)
 
+            print(f"Looking for course file at path: {course_path}")
+
             if not os.path.exists(course_path):
+                print(f"File not found: {course_path}")
                 raise Http404("Course not found")
 
             with open(course_path, encoding="utf-8") as file:
@@ -56,15 +65,18 @@ class CourseDetailView(APIView):
 
                 image_path = course_data.get("image", "")
                 if image_path:
-                    course_data["image"] = request.build_absolute_uri(settings.MEDIA_URL + quote(image_path))
+                    course_data["image"] = request.build_absolute_uri(f"{settings.MEDIA_URL}{image_path}")
 
             return Response(course_data)
 
         except FileNotFoundError:
+            print("File not found in system")
             raise Http404("Course not found")
 
         except json.JSONDecodeError:
+            print(f"Error decoding JSON in {course_file}")
             return Response({"error": f"Error decoding JSON in {course_file}"}, status=500)
 
         except Exception as e:
+            print(f"Unexpected error: {str(e)}")
             return Response({"error": f"An unexpected error occurred: {str(e)}"}, status=500)

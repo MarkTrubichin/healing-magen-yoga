@@ -56,8 +56,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / '../frontend/build/static',
-            BASE_DIR / '../frontend/build/',
+            BASE_DIR / '../frontend/build',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -92,21 +91,15 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
-if DEBUG:
-    from django.conf.urls.static import static
-    urlpatterns = static(MEDIA_URL, document_root=MEDIA_ROOT)
+MEDIA_ROOT = BASE_DIR / 'media'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / '../frontend/build/static',
     BASE_DIR / '../frontend/build',
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

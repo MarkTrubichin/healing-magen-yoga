@@ -42,6 +42,7 @@
     font-size: 18px;
     cursor: pointer;
     transition: 0.3s;
+    text-decoration: none;
 }
 
 .view-more-btn:hover {
