@@ -1,14 +1,13 @@
 from pathlib import Path
 import os
 from dotenv import load_dotenv
-from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY', 'fallback-secret-key')
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'healing-magen-yoga.onrender.com',
