@@ -6,17 +6,17 @@ function CoursesPage() {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    fetch(`${window.location.origin}/api/courses/`)
-        .then((response) => response.json())
-        .then((data) => setCourses(data))
-        .catch((error) => console.error("Error fetching courses:", error));
-    }, []);
+    // fetch(`${window.location.origin}/api/courses/`)
+    //     .then((response) => response.json())
+    //     .then((data) => setCourses(data))
+    //     .catch((error) => console.error("Error fetching courses:", error));
+    // }, []);
 
-  //   fetch("http://127.0.0.1:8000/api/courses/")
-  //     .then((response) => response.json())
-  //     .then((data) => setCourses(data))
-  //     .catch((error) => console.error("Error fetching courses:", error));
-  // }, []);
+    fetch("http://127.0.0.1:8000/api/courses/")
+      .then((response) => response.json())
+      .then((data) => setCourses(data))
+      .catch((error) => console.error("Error fetching courses:", error));
+  }, []);
 
   return (
     <div className="wrapper">

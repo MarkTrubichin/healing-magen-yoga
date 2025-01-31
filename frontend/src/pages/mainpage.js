@@ -38,12 +38,6 @@ function MainPage() {
             Healing Magen Yoga Therapy believes in empowering individuals to progress toward improved health 
             and well-being through the teachings and practices of yoga.
           </p>
-          <p>Our methodology is based on:</p>
-          <ul>
-            <li>Breathing, feeling, listening to the body.</li>
-            <li>Letting go of expectations, judgments, and competition.</li>
-            <li>Staying in the present moment.</li>
-          </ul>
           <p>
             We provide a structured program that allows students to integrate and deeply understand concepts 
             while maintaining a healthy balance in their personal lives.
