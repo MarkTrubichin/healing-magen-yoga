@@ -1,6 +1,8 @@
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+import logging
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -51,6 +53,25 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "https://healing-magen-yoga.onrender.com",
 ]
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR / 'error.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    },
+}
 
 ROOT_URLCONF = 'backend.urls'
 
