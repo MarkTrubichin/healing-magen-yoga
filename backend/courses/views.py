@@ -9,48 +9,36 @@ from rest_framework.response import Response
 class CourseListView(APIView):
     def get(self, request):
         try:
-            courses_dir = os.path.join(settings.BASE_DIR, 'courses/courses_data')
+            courses_dir = os.path.join(settings.BASE_DIR, 'backend/courses/courses_data')
+            print(f"Checking directory: {courses_dir}")
 
             if not os.path.exists(courses_dir):
+                print("❌ ERROR: Courses directory not found")
                 return Response({"error": "Courses directory not found."}, status=500)
 
             courses_files = [f for f in os.listdir(courses_dir) if f.endswith('.json')]
+            print(f"Found files: {courses_files}")
 
             if not courses_files:
+                print("❌ ERROR: No JSON files found")
                 return Response({"error": "No course files found."}, status=500)
 
             courses = []
-
             for course_file in courses_files:
                 course_path = os.path.join(courses_dir, course_file)
-                try:
-                    with open(course_path, encoding="utf-8") as file:
-                        course_data = json.load(file)
+                print(f"Reading: {course_path}")
 
-                        image_path = course_data.get("image", "")
-                        if image_path:
-                            media_path = os.path.join(settings.MEDIA_ROOT, image_path)
-                            if os.path.exists(media_path):
-                                course_data["image"] = request.build_absolute_uri(f"{settings.MEDIA_URL}{image_path}")
-                            else:
-                                course_data["image"] = None  
-
-                        courses.append(course_data)
-                except json.JSONDecodeError:
-                    return Response({"error": f"Error decoding JSON in {course_file}"}, status=500)
+                with open(course_path, encoding="utf-8") as file:
+                    course_data = json.load(file)
+                courses.append(course_data)
 
             return Response(courses)
 
         except Exception as e:
-            return Response({"error": f"An unexpected error occurred: {str(e)}"}, status=500)
+            print(f"❌ ERROR: {e}")
+            return Response({"error": f"Unexpected error: {e}"}, status=500)
 
 
-import os
-import json
-from django.conf import settings
-from django.http import Http404
-from rest_framework.views import APIView
-from rest_framework.response import Response
 
 class CourseDetailView(APIView):
     def get(self, request, pk):
