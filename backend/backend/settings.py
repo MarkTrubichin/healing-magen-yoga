@@ -97,6 +97,13 @@ if DEBUG:
     MEDIA_ROOT = BASE_DIR / 'media'
 else:
     MEDIA_ROOT = '/var/media'
+    os.makedirs(MEDIA_ROOT, exist_ok=True)
+
+
+    try:
+        os.chmod(MEDIA_ROOT, 0o777)
+    except PermissionError:
+        print("error setting up permission for /var/media")
 
 
 STATIC_URL = '/static/'
