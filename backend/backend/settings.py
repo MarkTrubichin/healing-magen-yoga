@@ -96,14 +96,9 @@ MEDIA_URL = '/media/'
 if DEBUG:
     MEDIA_ROOT = BASE_DIR / 'media'
 else:
-    MEDIA_ROOT = '/var/media'
-    os.makedirs(MEDIA_ROOT, exist_ok=True)
+    MEDIA_ROOT = '/opt/render/media'
 
-
-    try:
-        os.chmod(MEDIA_ROOT, 0o777)
-    except PermissionError:
-        print("error setting up permission for /var/media")
+os.makedirs(MEDIA_ROOT, exist_ok=True)
 
 
 STATIC_URL = '/static/'
