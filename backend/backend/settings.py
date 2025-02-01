@@ -17,6 +17,7 @@ ALLOWED_HOSTS = [
 ]
 
 INSTALLED_APPS = [
+    "whitenoise.runserver_nostatic",
     'corsheaders',
     'api',
     'courses',
@@ -98,7 +99,8 @@ if DEBUG:
 else:
     MEDIA_ROOT = '/opt/render/media'
 
-os.makedirs(MEDIA_ROOT, exist_ok=True)
+if not os.path.exists(MEDIA_ROOT):
+    os.makedirs(MEDIA_ROOT, exist_ok=True)
 
 
 STATIC_URL = '/static/'

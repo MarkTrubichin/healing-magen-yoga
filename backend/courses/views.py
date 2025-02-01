@@ -29,7 +29,11 @@ class CourseListView(APIView):
 
                         image_path = course_data.get("image", "")
                         if image_path:
-                            course_data["image"] = request.build_absolute_uri(f"{settings.MEDIA_URL}{image_path}")
+                            media_path = os.path.join(settings.MEDIA_ROOT, image_path)
+                            if os.path.exists(media_path):
+                                course_data["image"] = request.build_absolute_uri(f"{settings.MEDIA_URL}{image_path}")
+                            else:
+                                course_data["image"] = None  
 
                         courses.append(course_data)
                 except json.JSONDecodeError:
@@ -65,7 +69,11 @@ class CourseDetailView(APIView):
 
                 image_path = course_data.get("image", "")
                 if image_path:
-                    course_data["image"] = request.build_absolute_uri(f"{settings.MEDIA_URL}{image_path}")
+                    media_path = os.path.join(settings.MEDIA_ROOT, image_path)
+                    if os.path.exists(media_path):
+                        course_data["image"] = request.build_absolute_uri(f"{settings.MEDIA_URL}{image_path}")
+                    else:
+                        course_data["image"] = None
 
             return Response(course_data)
 
