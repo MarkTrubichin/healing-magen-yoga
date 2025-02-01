@@ -7,7 +7,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY', 'fallback-secret-key')
 
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
+print(f"DEBUG mode is set to: {DEBUG}")
 
 ALLOWED_HOSTS = [
     'healing-magen-yoga.onrender.com',
@@ -92,7 +93,11 @@ USE_I18N = True
 USE_TZ = True
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+if DEBUG:
+    MEDIA_ROOT = BASE_DIR / 'media'
+else:
+    MEDIA_ROOT = '/var/media'
+
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
