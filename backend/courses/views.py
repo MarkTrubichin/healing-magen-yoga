@@ -9,7 +9,7 @@ from rest_framework.response import Response
 class CourseListView(APIView):
     def get(self, request):
         try:
-            courses_dir = os.path.join(settings.BASE_DIR, 'backend/courses/courses_data')
+            courses_dir = os.path.join(settings.BASE_DIR, 'courses/courses_data')
             print(f"Checking directory: {courses_dir}")
 
             if not os.path.exists(courses_dir):
