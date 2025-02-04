@@ -61,7 +61,7 @@ LOGGING = {
         'file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            'filename': BASE_DIR / 'error.log',
+            'filename': '../src/error.log',
         },
     },
     'loggers': {
