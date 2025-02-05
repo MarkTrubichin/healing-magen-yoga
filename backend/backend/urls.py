@@ -11,7 +11,7 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='index.html')),
     path('api/courses/', include('courses.urls')),
     path('courses/', TemplateView.as_view(template_name='index.html')),
-    path('<path:path>/', RedirectView.as_view(url='/', permanent=False)),
+    # path('<path:path>/', RedirectView.as_view(url='/', permanent=False)),
 ]
 
 
