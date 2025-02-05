@@ -24,3 +24,37 @@
     font-size: 30px;
     color: #8afd8c;
 }
+
+@media (max-width: 1050px) {
+    .takepart {
+        max-width: 800px;
+    }
+}
+@media (max-width: 850px) {
+    .takepart {
+        max-width: 600px;
+    }
+    .takepart-email {
+        font-size: 25px;
+    }
+}
+@media (max-width: 650px) {
+    .takepart {
+        max-width: 400px;
+    }
+}
+@media (max-width: 450px) {
+    .takepart {
+        max-width: 200px;
+        padding: 5px 10px;
+    }
+    .takepart h1 {
+        font-size: 25px;
+    }
+    .takepart-text {
+        font-size: 18px;
+    }
+    .takepart-email {
+        font-size: 16px;
+    }
+}
