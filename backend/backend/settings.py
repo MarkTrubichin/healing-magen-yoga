@@ -117,11 +117,13 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
+MEDIA_ROOT = BASE_DIR / 'media'
+
 MEDIA_URL = '/media/'
-if DEBUG:
-    MEDIA_ROOT = BASE_DIR / 'media'
-else:
-    MEDIA_ROOT = '/opt/render/media'
+# if DEBUG:
+#     MEDIA_ROOT = BASE_DIR / 'media'
+# else:
+#     MEDIA_ROOT = '/opt/render/media'
 
 if not os.path.exists(MEDIA_ROOT):
     os.makedirs(MEDIA_ROOT, exist_ok=True)
