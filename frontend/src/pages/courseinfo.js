@@ -9,7 +9,12 @@ function CoursesInfo() {
 
   useEffect(() => {
 
-    fetch(`${window.location.origin}/api/courses/${id}/`)
+    const isDebug = process.env.DEBUG === 'True';
+    const apiUrl = isDebug
+    ? "http://127.0.0.1:8000/api/courses/"
+    : `${window.location.origin}/api/courses/${id}/`;
+
+    fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
         setCourse(data);
@@ -17,15 +22,6 @@ function CoursesInfo() {
       })
       .catch((error) => console.error("Error fetching course:", error));
     }, [id]);
-
-    // fetch(`http://127.0.0.1:8000/api/courses/${id}/`)
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     setCourse(data);
-    //     setLoading(false);
-    //   })
-    //   .catch((error) => console.error("Error fetching course:", error));
-    // }, [id]);
 
   if (loading) return <p className="loading">Loading course details...</p>;
   if (!course) return <p className="error">Course not found.</p>;
