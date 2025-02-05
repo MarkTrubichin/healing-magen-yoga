@@ -6,12 +6,8 @@ function CoursesPage() {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    const isDebug = process.env.DEBUG === 'True';
-    const apiUrl = isDebug
-    ? "http://127.0.0.1:8000/api/courses/"
-    : `${window.location.origin}/api/courses/`;
 
-    fetch(apiUrl)
+    fetch(`${window.location.origin}/api/courses/`)
       .then(response => response.json())
       .then(data => setCourses(data))
       .catch(error => console.error("Error fetching courses:", error));

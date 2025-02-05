@@ -14,7 +14,7 @@ function Header() {
         <ul>
             <li><a href='/'>Home</a></li>
             <li><a href='/courses'>Courses</a></li>
-            <li><a href='/'>Contact us</a></li>
+            <li><a href='/contactus'>Contact us</a></li>
         </ul>
     </header>
   );
