@@ -5,7 +5,6 @@ from django.views.generic.base import RedirectView
 from django.views.static import serve
 from django.conf import settings
 from django.conf.urls.static import static
-from django.http import JsonResponse
 
 urlpatterns = [
     path('admin/', admin.site.urls),
