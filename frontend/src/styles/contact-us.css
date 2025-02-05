@@ -20,12 +20,16 @@
 .takepart-text {
     font-size: 20px;
 }
-.takepart-email {
+.takepart-contacts {
     font-size: 30px;
     color: #8afd8c;
 }
-.takepart-patreon img{
+
+
+
+.takepart-sociallinks img{
     border-radius: 20px;
+    margin-right: 20px;
 }
 
 @media (max-width: 1050px) {
@@ -37,7 +41,7 @@
     .takepart {
         max-width: 600px;
     }
-    .takepart-email {
+    .takepart-contacts {
         font-size: 25px;
     }
 }
@@ -45,7 +49,7 @@
     .takepart {
         max-width: 400px;
     }
-    .takepart-patreon img{
+    .takepart-sociallinks img{
         width: 70px;
     }
 }
@@ -60,10 +64,10 @@
     .takepart-text {
         font-size: 18px;
     }
-    .takepart-email {
+    .takepart-contacts {
         font-size: 16px;
     }
-    .takepart-patreon img{
+    .takepart-sociallinks img{
         width: 50px;
     }
 }
