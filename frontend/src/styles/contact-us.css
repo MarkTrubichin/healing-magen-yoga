@@ -45,6 +45,9 @@
     .takepart {
         max-width: 400px;
     }
+    .takepart-patreon img{
+        width: 70px;
+    }
 }
 @media (max-width: 450px) {
     .takepart {
@@ -59,5 +62,8 @@
     }
     .takepart-email {
         font-size: 16px;
+    }
+    .takepart-patreon img{
+        width: 50px;
     }
 }
