@@ -9,12 +9,7 @@ function CoursesInfo() {
 
   useEffect(() => {
 
-    const isDebug = process.env.DEBUG === 'True';
-    const apiUrl = isDebug
-    ? "http://127.0.0.1:8000/api/courses/"
-    : `${window.location.origin}/api/courses/${id}/`;
-
-    fetch(apiUrl)
+    fetch(`${window.location.origin}/api/courses/${id}/`)
       .then((response) => response.json())
       .then((data) => {
         setCourse(data);
